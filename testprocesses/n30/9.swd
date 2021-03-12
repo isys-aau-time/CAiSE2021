@@ -1,0 +1,109 @@
+[graph]
+graphtype = TcsGraph
+name = generated-graph
+deadline = 244
+
+[nodes]
+start Start
+PAR_961 AndSplit
+PAR_1050 AndSplit
+RegionalShipping1' Task 7, 20 c
+NationalShipping1' Task 5, 8 n
+InternationalShipping1' Task 7, 24 n
+Confirm-Selection3' Task 10, 19 n
+PAR_975 AndSplit
+PayByCreditCard3' Task 18, 21 n
+PayByCheck3' Task 7, 9 c
+PAR_975-1-join AndJoin
+PackageGoods3' Task 19, 24 n
+CheckInventory3' Task 9, 15 n
+InternationalShipping3' Task 7, 15 n
+NationalShipping3' Task 8, 22 n
+RegionalShipping3' Task 5, 10 n
+SelectGoods3' Task 6, 21 n
+CheckInventory1' Task 8, 21 n
+PackageGoods1' Task 21, 22 n
+PAR_1050-1-join AndJoin
+PayByCheck1' Task 9, 24 n
+PayByCreditCard1' Task 10, 11 n
+Confirm-Selection1' Task 14, 23 n
+SelectGoods1' Task 13, 21 n
+ArchiveOrder3' Task 6, 20 n
+PAR_1007 AndSplit
+SelectGoods2' Task 5, 15 n
+PayByCreditCard2' Task 9, 19 n
+PayByCheck2' Task 17, 21 n
+Confirm-Selection2' Task 12, 22 n
+PAR_1013 AndSplit
+PackageGoods2' Task 10, 20 n
+PAR_1022 AndSplit
+RegionalShipping2' Task 16, 18 n
+InternationalShipping2' Task 9, 15 n
+NationalShipping2' Task 10, 13 n
+PAR_1022-1-join AndJoin
+CheckInventory2' Task 5, 19 c
+PAR_1013-1-join AndJoin
+ArchiveOrder2' Task 13, 20 n
+PAR_1007-1-join AndJoin
+ArchiveOrder1' Task 9, 20 n
+PAR_961-1-join AndJoin
+end End
+
+[edges]
+start PAR_961
+PAR_961 PAR_1050
+PAR_961 Confirm-Selection3'
+PAR_1050 RegionalShipping1'
+PAR_1050 CheckInventory1'
+RegionalShipping1' NationalShipping1'
+NationalShipping1' InternationalShipping1'
+InternationalShipping1' PAR_1050-1-join
+Confirm-Selection3' PAR_975
+PAR_975 PayByCreditCard3'
+PAR_975 PayByCheck3'
+PayByCreditCard3' PAR_975-1-join
+PayByCheck3' PAR_975-1-join
+PAR_975-1-join PackageGoods3'
+PackageGoods3' CheckInventory3'
+CheckInventory3' InternationalShipping3'
+InternationalShipping3' NationalShipping3'
+NationalShipping3' RegionalShipping3'
+RegionalShipping3' SelectGoods3'
+SelectGoods3' ArchiveOrder3'
+CheckInventory1' PackageGoods1'
+PackageGoods1' PAR_1050-1-join
+PAR_1050-1-join PayByCheck1'
+PayByCheck1' PayByCreditCard1'
+PayByCreditCard1' Confirm-Selection1'
+Confirm-Selection1' SelectGoods1'
+SelectGoods1' ArchiveOrder1'
+ArchiveOrder3' PAR_1007
+PAR_1007 SelectGoods2'
+PAR_1007 PAR_1013
+SelectGoods2' PayByCreditCard2'
+PayByCreditCard2' PayByCheck2'
+PayByCheck2' Confirm-Selection2'
+Confirm-Selection2' PAR_1007-1-join
+PAR_1013 CheckInventory2'
+PAR_1013 PackageGoods2'
+PackageGoods2' PAR_1022
+PAR_1022 InternationalShipping2'
+PAR_1022 RegionalShipping2'
+RegionalShipping2' PAR_1022-1-join
+InternationalShipping2' NationalShipping2'
+NationalShipping2' PAR_1022-1-join
+PAR_1022-1-join PAR_1013-1-join
+CheckInventory2' PAR_1013-1-join
+PAR_1013-1-join ArchiveOrder2'
+ArchiveOrder2' PAR_1007-1-join
+PAR_1007-1-join PAR_961-1-join
+ArchiveOrder1' PAR_961-1-join
+PAR_961-1-join end
+
+[constraints]
+LBC PayByCheck3'.e PayByCreditCard3'.e 1
+UBC PayByCheck3'.e PayByCreditCard3'.e 20
+LBC RegionalShipping1'.e CheckInventory1'.e 1
+UBC RegionalShipping1'.e CheckInventory1'.e 20
+LBC CheckInventory2'.e PackageGoods2'.e 1
+UBC CheckInventory2'.e PackageGoods2'.e 20

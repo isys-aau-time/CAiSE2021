@@ -1,0 +1,141 @@
+[graph]
+graphtype = TcsGraph
+name = generated-graph
+deadline = 304
+
+[nodes]
+start Start
+PAR_807 AndSplit
+PAR_889 AndSplit
+SelectGoods4' Task 8, 19 n
+PAR_812 AndSplit
+SelectGoods3' Task 14, 16 c
+Confirm-Selection4' Task 7, 18 c
+PayByCheck4' Task 9, 16 n
+PayByCreditCard4' Task 7, 16 n
+NationalShipping4' Task 15, 16 n
+RegionalShipping4' Task 11, 23 n
+InternationalShipping4' Task 5, 22 n
+PackageGoods4' Task 13, 18 n
+Confirm-Selection3' Task 15, 21 n
+PayByCheck3' Task 8, 21 n
+PayByCreditCard3' Task 7, 9 n
+PackageGoods3' Task 12, 23 n
+CheckInventory4' Task 14, 21 n
+CheckInventory3' Task 17, 24 n
+InternationalShipping3' Task 15, 17 n
+NationalShipping3' Task 9, 16 n
+RegionalShipping3' Task 6, 11 n
+ArchiveOrder4' Task 9, 10 n
+PAR_889-1-join AndJoin
+RegionalShipping1' Task 6, 10 n
+NationalShipping1' Task 9, 17 n
+InternationalShipping1' Task 9, 24 n
+CheckInventory1' Task 10, 23 n
+PackageGoods1' Task 6, 21 n
+PAR_951 AndSplit
+PayByCreditCard1' Task 18, 21 n
+PayByCheck1' Task 16, 19 n
+PAR_951-1-join AndJoin
+Confirm-Selection1' Task 11, 13 n
+SelectGoods1' Task 10, 13 n
+ArchiveOrder3' Task 13, 17 n
+PAR_812-1-join AndJoin
+PAR_852 AndSplit
+SelectGoods2' Task 10, 13 n
+PAR_877 AndSplit
+PayByCreditCard2' Task 13, 19 c
+PayByCheck2' Task 11, 24 n
+Confirm-Selection2' Task 18, 23 n
+PAR_877-1-join AndJoin
+PAR_860 AndSplit
+PackageGoods2' Task 10, 13 c
+PAR_866 AndSplit
+RegionalShipping2' Task 8, 24 n
+InternationalShipping2' Task 14, 19 n
+NationalShipping2' Task 16, 19 n
+PAR_866-1-join AndJoin
+CheckInventory2' Task 8, 21 n
+PAR_860-1-join AndJoin
+ArchiveOrder2' Task 5, 15 n
+PAR_852-1-join AndJoin
+ArchiveOrder1' Task 5, 12 n
+PAR_807-1-join AndJoin
+end End
+
+[edges]
+start PAR_807
+PAR_807 PAR_812
+PAR_807 PAR_889
+PAR_889 Confirm-Selection4'
+PAR_889 SelectGoods4'
+SelectGoods4' ArchiveOrder4'
+PAR_812 SelectGoods3'
+PAR_812 Confirm-Selection3'
+SelectGoods3' ArchiveOrder3'
+Confirm-Selection4' PayByCheck4'
+PayByCheck4' PayByCreditCard4'
+PayByCreditCard4' NationalShipping4'
+NationalShipping4' RegionalShipping4'
+RegionalShipping4' InternationalShipping4'
+InternationalShipping4' PackageGoods4'
+PackageGoods4' CheckInventory4'
+Confirm-Selection3' PayByCheck3'
+PayByCheck3' PayByCreditCard3'
+PayByCreditCard3' PackageGoods3'
+PackageGoods3' CheckInventory3'
+CheckInventory4' PAR_889-1-join
+CheckInventory3' InternationalShipping3'
+InternationalShipping3' NationalShipping3'
+NationalShipping3' RegionalShipping3'
+RegionalShipping3' PAR_812-1-join
+ArchiveOrder4' PAR_889-1-join
+PAR_889-1-join RegionalShipping1'
+RegionalShipping1' NationalShipping1'
+NationalShipping1' InternationalShipping1'
+InternationalShipping1' CheckInventory1'
+CheckInventory1' PackageGoods1'
+PackageGoods1' PAR_951
+PAR_951 PayByCheck1'
+PAR_951 PayByCreditCard1'
+PayByCreditCard1' PAR_951-1-join
+PayByCheck1' PAR_951-1-join
+PAR_951-1-join Confirm-Selection1'
+Confirm-Selection1' SelectGoods1'
+SelectGoods1' ArchiveOrder1'
+ArchiveOrder3' PAR_812-1-join
+PAR_812-1-join PAR_852
+PAR_852 SelectGoods2'
+PAR_852 PAR_860
+SelectGoods2' PAR_877
+PAR_877 PayByCreditCard2'
+PAR_877 Confirm-Selection2'
+PayByCreditCard2' PayByCheck2'
+PayByCheck2' PAR_877-1-join
+Confirm-Selection2' PAR_877-1-join
+PAR_877-1-join PAR_852-1-join
+PAR_860 CheckInventory2'
+PAR_860 PackageGoods2'
+PackageGoods2' PAR_866
+PAR_866 InternationalShipping2'
+PAR_866 RegionalShipping2'
+RegionalShipping2' PAR_866-1-join
+InternationalShipping2' NationalShipping2'
+NationalShipping2' PAR_866-1-join
+PAR_866-1-join PAR_860-1-join
+CheckInventory2' PAR_860-1-join
+PAR_860-1-join ArchiveOrder2'
+ArchiveOrder2' PAR_852-1-join
+PAR_852-1-join PAR_807-1-join
+ArchiveOrder1' PAR_807-1-join
+PAR_807-1-join end
+
+[constraints]
+UBC Confirm-Selection4'.e SelectGoods4'.e 20
+LBC Confirm-Selection4'.e SelectGoods4'.e 1
+UBC PayByCreditCard2'.e Confirm-Selection2'.e 20
+LBC PayByCreditCard2'.e Confirm-Selection2'.e 1
+UBC SelectGoods3'.e Confirm-Selection3'.e 20
+LBC SelectGoods3'.e Confirm-Selection3'.e 1
+UBC PackageGoods2'.e CheckInventory2'.e 20
+LBC PackageGoods2'.e CheckInventory2'.e 1

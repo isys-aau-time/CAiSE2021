@@ -1,0 +1,72 @@
+[graph]
+graphtype = TcsGraph
+name = generated-graph
+deadline = 302
+
+[nodes]
+start Start
+PAR_506 AndSplit
+SelectGoods1' Task 5, 17 n
+RegionalShipping1' Task 6, 13 c
+NationalShipping1' Task 6, 16 n
+InternationalShipping1' Task 15, 20 n
+CheckInventory1' Task 15, 23 n
+PackageGoods1' Task 7, 14 n
+PAR_529 AndSplit
+PAR_536 AndSplit
+PayByCreditCard1' Task 8, 23 n
+PayByCheck1' Task 16, 22 n
+PAR_536-1-join AndJoin
+Confirm-Selection1' Task 5, 6 n
+PAR_529-1-join AndJoin
+ArchiveOrder1' Task 12, 20 c
+PAR_506-1-join AndJoin
+SelectGoods2' Task 10, 23 n
+PayByCreditCard2' Task 17, 17 n
+PayByCheck2' Task 16, 17 n
+Confirm-Selection2' Task 5, 18 n
+CheckInventory2' Task 6, 23 n
+PackageGoods2' Task 5, 15 n
+RegionalShipping2' Task 16, 18 n
+InternationalShipping2' Task 15, 21 n
+NationalShipping2' Task 13, 24 n
+ArchiveOrder2' Task 11, 17 n
+end End
+
+[edges]
+start PAR_506
+PAR_506 RegionalShipping1'
+PAR_506 SelectGoods1'
+SelectGoods1' ArchiveOrder1'
+RegionalShipping1' NationalShipping1'
+NationalShipping1' InternationalShipping1'
+InternationalShipping1' CheckInventory1'
+CheckInventory1' PackageGoods1'
+PackageGoods1' PAR_529
+PAR_529 Confirm-Selection1'
+PAR_529 PAR_536
+PAR_536 PayByCheck1'
+PAR_536 PayByCreditCard1'
+PayByCreditCard1' PAR_536-1-join
+PayByCheck1' PAR_536-1-join
+PAR_536-1-join PAR_529-1-join
+Confirm-Selection1' PAR_529-1-join
+PAR_529-1-join PAR_506-1-join
+ArchiveOrder1' PAR_506-1-join
+PAR_506-1-join SelectGoods2'
+SelectGoods2' PayByCreditCard2'
+PayByCreditCard2' PayByCheck2'
+PayByCheck2' Confirm-Selection2'
+Confirm-Selection2' CheckInventory2'
+CheckInventory2' PackageGoods2'
+PackageGoods2' RegionalShipping2'
+RegionalShipping2' InternationalShipping2'
+InternationalShipping2' NationalShipping2'
+NationalShipping2' ArchiveOrder2'
+ArchiveOrder2' end
+
+[constraints]
+LBC RegionalShipping1'.e SelectGoods1'.e 1
+UBC RegionalShipping1'.e SelectGoods1'.e 11
+LBC ArchiveOrder1'.e NationalShipping1'.e 1
+UBC ArchiveOrder1'.e NationalShipping1'.e 34

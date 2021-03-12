@@ -1,0 +1,67 @@
+[graph]
+graphtype = TcsGraph
+name = generated-graph
+deadline = 311
+
+[nodes]
+start Start
+RegionalShipping1' Task 9, 17 n
+NationalShipping1' Task 17, 21 n
+InternationalShipping1' Task 15, 20 n
+CheckInventory1' Task 12, 18 n
+PackageGoods1' Task 6, 23 n
+PayByCheck1' Task 13, 17 n
+PayByCreditCard1' Task 12, 18 n
+Confirm-Selection1' Task 12, 16 n
+SelectGoods1' Task 8, 21 n
+ArchiveOrder1' Task 5, 6 n
+SelectGoods2' Task 5, 21 n
+PAR_811 AndSplit
+PayByCreditCard2' Task 11, 14 c
+PayByCheck2' Task 7, 8 n
+Confirm-Selection2' Task 10, 24 n
+PAR_811-1-join AndJoin
+CheckInventory2' Task 10, 11 n
+PackageGoods2' Task 6, 18 n
+PAR_832 AndSplit
+RegionalShipping2' Task 19, 20 c
+InternationalShipping2' Task 18, 21 n
+NationalShipping2' Task 8, 15 n
+PAR_832-1-join AndJoin
+ArchiveOrder2' Task 19, 24 n
+end End
+
+[edges]
+start RegionalShipping1'
+RegionalShipping1' NationalShipping1'
+NationalShipping1' InternationalShipping1'
+InternationalShipping1' CheckInventory1'
+CheckInventory1' PackageGoods1'
+PackageGoods1' PayByCheck1'
+PayByCheck1' PayByCreditCard1'
+PayByCreditCard1' Confirm-Selection1'
+Confirm-Selection1' SelectGoods1'
+SelectGoods1' ArchiveOrder1'
+ArchiveOrder1' SelectGoods2'
+SelectGoods2' PAR_811
+PAR_811 PayByCreditCard2'
+PAR_811 Confirm-Selection2'
+PayByCreditCard2' PayByCheck2'
+PayByCheck2' PAR_811-1-join
+Confirm-Selection2' PAR_811-1-join
+PAR_811-1-join CheckInventory2'
+CheckInventory2' PackageGoods2'
+PackageGoods2' PAR_832
+PAR_832 InternationalShipping2'
+PAR_832 RegionalShipping2'
+RegionalShipping2' PAR_832-1-join
+InternationalShipping2' NationalShipping2'
+NationalShipping2' PAR_832-1-join
+PAR_832-1-join ArchiveOrder2'
+ArchiveOrder2' end
+
+[constraints]
+LBC PayByCreditCard2'.e Confirm-Selection2'.e 1
+UBC PayByCreditCard2'.e Confirm-Selection2'.e 16
+LBC RegionalShipping2'.e InternationalShipping2'.e 4
+UBC RegionalShipping2'.e InternationalShipping2'.e 36

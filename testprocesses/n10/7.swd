@@ -1,0 +1,50 @@
+[graph]
+graphtype = TcsGraph
+name = generated-graph
+deadline = 102
+
+[nodes]
+start Start
+PAR_3757 AndSplit
+SelectGoods' Task 16, 19 n
+PAR_3771 AndSplit
+RegionalShipping' Task 8, 21 n
+NationalShipping' Task 15, 18 c
+InternationalShipping' Task 6, 21 n
+PAR_3771-1-join AndJoin
+CheckInventory' Task 10, 19 n
+PackageGoods' Task 11, 11 n
+PAR_3786 AndSplit
+PayByCreditCard' Task 12, 18 n
+PayByCheck' Task 16, 19 n
+PAR_3786-1-join AndJoin
+Confirm-Selection' Task 8, 14 n
+ArchiveOrder' Task 13, 17 n
+PAR_3757-1-join AndJoin
+end End
+
+[edges]
+start PAR_3757
+PAR_3757 PAR_3771
+PAR_3757 SelectGoods'
+SelectGoods' ArchiveOrder'
+PAR_3771 RegionalShipping'
+PAR_3771 NationalShipping'
+RegionalShipping' PAR_3771-1-join
+NationalShipping' InternationalShipping'
+InternationalShipping' PAR_3771-1-join
+PAR_3771-1-join CheckInventory'
+CheckInventory' PackageGoods'
+PackageGoods' PAR_3786
+PAR_3786 PayByCreditCard'
+PAR_3786 PayByCheck'
+PayByCreditCard' PAR_3786-1-join
+PayByCheck' PAR_3786-1-join
+PAR_3786-1-join Confirm-Selection'
+Confirm-Selection' PAR_3757-1-join
+ArchiveOrder' PAR_3757-1-join
+PAR_3757-1-join end
+
+[constraints]
+LBC NationalShipping'.e RegionalShipping'.e 2
+UBC NationalShipping'.e RegionalShipping'.e 14

@@ -1,0 +1,188 @@
+[graph]
+graphtype = TcsGraph
+name = generated-graph
+deadline = 397
+
+[nodes]
+start Start
+PAR_1231 AndSplit
+SelectGoods4' Task 15, 19 n
+Confirm-Selection5' Task 5, 14 n
+PAR_1245 AndSplit
+PayByCreditCard5' Task 18, 18 n
+PayByCheck5' Task 11, 12 c
+PAR_1245-1-join AndJoin
+ArchiveOrder5' Task 12, 17 n
+SelectGoods5' Task 7, 18 n
+PAR_1256 AndSplit
+PackageGoods5' Task 14, 16 c
+CheckInventory5' Task 16, 22 n
+NationalShipping5' Task 15, 19 n
+RegionalShipping5' Task 7, 13 n
+InternationalShipping5' Task 17, 21 n
+PAR_1256-1-join AndJoin
+Confirm-Selection3' Task 14, 16 n
+PayByCheck3' Task 18, 19 n
+PayByCreditCard3' Task 23, 24 n
+PAR_1291 AndSplit
+PackageGoods3' Task 11, 13 c
+CheckInventory3' Task 21, 24 n
+PAR_1301 AndSplit
+NationalShipping3' Task 9, 20 n
+RegionalShipping3' Task 16, 18 n
+InternationalShipping3' Task 5, 22 n
+PAR_1301-1-join AndJoin
+PAR_1291-1-join AndJoin
+SelectGoods3' Task 13, 17 n
+ArchiveOrder4' Task 6, 16 n
+PAR_1357 AndSplit
+PAR_1363 AndSplit
+PayByCreditCard4' Task 13, 23 n
+PayByCheck4' Task 9, 23 c
+PAR_1363-1-join AndJoin
+Confirm-Selection4' Task 9, 16 n
+PAR_1357-1-join AndJoin
+PAR_1371 AndSplit
+PackageGoods4' Task 14, 16 c
+CheckInventory4' Task 18, 24 n
+NationalShipping4' Task 8, 22 n
+RegionalShipping4' Task 9, 15 n
+InternationalShipping4' Task 10, 22 n
+PAR_1371-1-join AndJoin
+RegionalShipping1' Task 18, 20 n
+NationalShipping1' Task 8, 22 n
+InternationalShipping1' Task 12, 16 n
+CheckInventory1' Task 13, 21 n
+PackageGoods1' Task 16, 23 n
+PAR_1409 AndSplit
+PayByCheck1' Task 13, 16 n
+PayByCreditCard1' Task 9, 21 n
+Confirm-Selection1' Task 5, 6 n
+PAR_1409-1-join AndJoin
+SelectGoods1' Task 12, 23 n
+ArchiveOrder3' Task 19, 21 n
+PAR_1314 AndSplit
+SelectGoods2' Task 10, 13 n
+PAR_1338 AndSplit
+PAR_1344 AndSplit
+PayByCreditCard2' Task 9, 19 n
+PayByCheck2' Task 18, 18 n
+PAR_1344-1-join AndJoin
+Confirm-Selection2' Task 5, 19 n
+PAR_1338-1-join AndJoin
+PAR_1320 AndSplit
+PackageGoods2' Task 15, 23 n
+RegionalShipping2' Task 19, 24 n
+InternationalShipping2' Task 7, 11 n
+NationalShipping2' Task 6, 19 n
+CheckInventory2' Task 12, 14 n
+PAR_1320-1-join AndJoin
+ArchiveOrder2' Task 9, 19 n
+PAR_1314-1-join AndJoin
+ArchiveOrder1' Task 12, 20 n
+PAR_1231-1-join AndJoin
+end End
+
+[edges]
+start PAR_1231
+PAR_1231 Confirm-Selection5'
+PAR_1231 SelectGoods4'
+SelectGoods4' ArchiveOrder4'
+Confirm-Selection5' PAR_1245
+PAR_1245 PayByCheck5'
+PAR_1245 PayByCreditCard5'
+PayByCreditCard5' PAR_1245-1-join
+PayByCheck5' PAR_1245-1-join
+PAR_1245-1-join ArchiveOrder5'
+ArchiveOrder5' SelectGoods5'
+SelectGoods5' PAR_1256
+PAR_1256 CheckInventory5'
+PAR_1256 PackageGoods5'
+PackageGoods5' PAR_1256-1-join
+CheckInventory5' NationalShipping5'
+NationalShipping5' RegionalShipping5'
+RegionalShipping5' InternationalShipping5'
+InternationalShipping5' PAR_1256-1-join
+PAR_1256-1-join Confirm-Selection3'
+Confirm-Selection3' PayByCheck3'
+PayByCheck3' PayByCreditCard3'
+PayByCreditCard3' PAR_1291
+PAR_1291 PackageGoods3'
+PAR_1291 CheckInventory3'
+PackageGoods3' PAR_1291-1-join
+CheckInventory3' PAR_1301
+PAR_1301 InternationalShipping3'
+PAR_1301 NationalShipping3'
+NationalShipping3' RegionalShipping3'
+RegionalShipping3' PAR_1301-1-join
+InternationalShipping3' PAR_1301-1-join
+PAR_1301-1-join PAR_1291-1-join
+PAR_1291-1-join SelectGoods3'
+SelectGoods3' ArchiveOrder3'
+ArchiveOrder4' PAR_1357
+PAR_1357 Confirm-Selection4'
+PAR_1357 PAR_1363
+PAR_1363 PayByCreditCard4'
+PAR_1363 PayByCheck4'
+PayByCreditCard4' PAR_1363-1-join
+PayByCheck4' PAR_1363-1-join
+PAR_1363-1-join PAR_1357-1-join
+Confirm-Selection4' PAR_1357-1-join
+PAR_1357-1-join PAR_1371
+PAR_1371 NationalShipping4'
+PAR_1371 PackageGoods4'
+PackageGoods4' CheckInventory4'
+CheckInventory4' PAR_1371-1-join
+NationalShipping4' RegionalShipping4'
+RegionalShipping4' InternationalShipping4'
+InternationalShipping4' PAR_1371-1-join
+PAR_1371-1-join RegionalShipping1'
+RegionalShipping1' NationalShipping1'
+NationalShipping1' InternationalShipping1'
+InternationalShipping1' CheckInventory1'
+CheckInventory1' PackageGoods1'
+PackageGoods1' PAR_1409
+PAR_1409 Confirm-Selection1'
+PAR_1409 PayByCheck1'
+PayByCheck1' PayByCreditCard1'
+PayByCreditCard1' PAR_1409-1-join
+Confirm-Selection1' PAR_1409-1-join
+PAR_1409-1-join SelectGoods1'
+SelectGoods1' ArchiveOrder1'
+ArchiveOrder3' PAR_1314
+PAR_1314 PAR_1320
+PAR_1314 SelectGoods2'
+SelectGoods2' PAR_1338
+PAR_1338 PAR_1344
+PAR_1338 Confirm-Selection2'
+PAR_1344 PayByCheck2'
+PAR_1344 PayByCreditCard2'
+PayByCreditCard2' PAR_1344-1-join
+PayByCheck2' PAR_1344-1-join
+PAR_1344-1-join PAR_1338-1-join
+Confirm-Selection2' PAR_1338-1-join
+PAR_1338-1-join PAR_1314-1-join
+PAR_1320 CheckInventory2'
+PAR_1320 PackageGoods2'
+PackageGoods2' RegionalShipping2'
+RegionalShipping2' InternationalShipping2'
+InternationalShipping2' NationalShipping2'
+NationalShipping2' PAR_1320-1-join
+CheckInventory2' PAR_1320-1-join
+PAR_1320-1-join ArchiveOrder2'
+ArchiveOrder2' PAR_1314-1-join
+PAR_1314-1-join PAR_1231-1-join
+ArchiveOrder1' PAR_1231-1-join
+PAR_1231-1-join end
+
+[constraints]
+UBC PayByCheck5'.e PayByCreditCard5'.e 20
+LBC PayByCheck5'.e PayByCreditCard5'.e 1
+UBC PayByCheck4'.e PayByCreditCard4'.e 20
+LBC PayByCheck4'.e PayByCreditCard4'.e 1
+UBC PackageGoods4'.e NationalShipping4'.e 20
+LBC PackageGoods4'.e NationalShipping4'.e 1
+UBC PackageGoods5'.e CheckInventory5'.e 20
+LBC PackageGoods5'.e CheckInventory5'.e 1
+UBC PackageGoods3'.e CheckInventory3'.e 20
+LBC PackageGoods3'.e CheckInventory3'.e 1

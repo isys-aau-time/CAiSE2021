@@ -1,0 +1,77 @@
+[graph]
+graphtype = TcsGraph
+name = generated-graph
+deadline = 163
+
+[nodes]
+start Start
+PAR_673 AndSplit
+SelectGoods2' Task 22, 23 n
+PAR_686 AndSplit
+PayByCreditCard2' Task 20, 21 n
+PayByCheck2' Task 5, 20 n
+RegionalShipping1' Task 15, 23 c
+NationalShipping1' Task 20, 21 n
+InternationalShipping1' Task 6, 13 n
+Confirm-Selection2' Task 11, 17 n
+PAR_686-1-join AndJoin
+CheckInventory2' Task 10, 22 n
+PackageGoods2' Task 10, 14 n
+RegionalShipping2' Task 9, 17 n
+InternationalShipping2' Task 9, 11 n
+NationalShipping2' Task 12, 18 n
+CheckInventory1' Task 17, 20 n
+PackageGoods1' Task 7, 14 n
+PAR_744 AndSplit
+PAR_751 AndSplit
+PayByCreditCard1' Task 24, 24 n
+PayByCheck1' Task 17, 23 c
+PAR_751-1-join AndJoin
+Confirm-Selection1' Task 13, 22 n
+PAR_744-1-join AndJoin
+SelectGoods1' Task 22, 24 n
+ArchiveOrder2' Task 10, 16 n
+ArchiveOrder1' Task 13, 24 n
+PAR_673-1-join AndJoin
+end End
+
+[edges]
+start PAR_673
+PAR_673 RegionalShipping1'
+PAR_673 SelectGoods2'
+SelectGoods2' PAR_686
+PAR_686 Confirm-Selection2'
+PAR_686 PayByCreditCard2'
+PayByCreditCard2' PayByCheck2'
+PayByCheck2' PAR_686-1-join
+RegionalShipping1' NationalShipping1'
+NationalShipping1' InternationalShipping1'
+InternationalShipping1' CheckInventory1'
+Confirm-Selection2' PAR_686-1-join
+PAR_686-1-join CheckInventory2'
+CheckInventory2' PackageGoods2'
+PackageGoods2' RegionalShipping2'
+RegionalShipping2' InternationalShipping2'
+InternationalShipping2' NationalShipping2'
+NationalShipping2' ArchiveOrder2'
+CheckInventory1' PackageGoods1'
+PackageGoods1' PAR_744
+PAR_744 PAR_751
+PAR_744 Confirm-Selection1'
+PAR_751 PayByCreditCard1'
+PAR_751 PayByCheck1'
+PayByCreditCard1' PAR_751-1-join
+PayByCheck1' PAR_751-1-join
+PAR_751-1-join PAR_744-1-join
+Confirm-Selection1' PAR_744-1-join
+PAR_744-1-join SelectGoods1'
+SelectGoods1' ArchiveOrder1'
+ArchiveOrder2' PAR_673-1-join
+ArchiveOrder1' PAR_673-1-join
+PAR_673-1-join end
+
+[constraints]
+LBC RegionalShipping1'.e SelectGoods2'.e 1
+UBC RegionalShipping1'.e SelectGoods2'.e 16
+LBC PayByCheck1'.e PayByCreditCard1'.e 2
+UBC PayByCheck1'.e PayByCreditCard1'.e 16

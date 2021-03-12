@@ -1,0 +1,78 @@
+[graph]
+graphtype = TcsGraph
+name = generated-graph
+deadline = 235
+
+[nodes]
+start Start
+PAR_261 AndSplit
+SelectGoods1' Task 13, 23 n
+PAR_271 AndSplit
+RegionalShipping1' Task 6, 23 n
+NationalShipping1' Task 6, 15 n
+InternationalShipping1' Task 5, 17 n
+CheckInventory1' Task 5, 8 n
+PackageGoods1' Task 10, 19 n
+PAR_271-1-join AndJoin
+PAR_286 AndSplit
+PayByCheck1' Task 8, 13 n
+PayByCreditCard1' Task 20, 23 n
+Confirm-Selection1' Task 12, 15 c
+PAR_286-1-join AndJoin
+ArchiveOrder1' Task 10, 22 n
+PAR_261-1-join AndJoin
+SelectGoods2' Task 16, 21 n
+PAR_303 AndSplit
+PayByCreditCard2' Task 9, 24 n
+PayByCheck2' Task 5, 14 n
+Confirm-Selection2' Task 7, 10 c
+PAR_303-1-join AndJoin
+CheckInventory2' Task 13, 21 n
+PackageGoods2' Task 9, 9 n
+RegionalShipping2' Task 17, 18 n
+InternationalShipping2' Task 5, 7 n
+NationalShipping2' Task 17, 21 n
+ArchiveOrder2' Task 6, 9 n
+end End
+
+[edges]
+start PAR_261
+PAR_261 PAR_271
+PAR_261 SelectGoods1'
+SelectGoods1' ArchiveOrder1'
+PAR_271 RegionalShipping1'
+PAR_271 CheckInventory1'
+RegionalShipping1' NationalShipping1'
+NationalShipping1' InternationalShipping1'
+InternationalShipping1' PAR_271-1-join
+CheckInventory1' PackageGoods1'
+PackageGoods1' PAR_271-1-join
+PAR_271-1-join PAR_286
+PAR_286 PayByCheck1'
+PAR_286 Confirm-Selection1'
+PayByCheck1' PayByCreditCard1'
+PayByCreditCard1' PAR_286-1-join
+Confirm-Selection1' PAR_286-1-join
+PAR_286-1-join PAR_261-1-join
+ArchiveOrder1' PAR_261-1-join
+PAR_261-1-join SelectGoods2'
+SelectGoods2' PAR_303
+PAR_303 Confirm-Selection2'
+PAR_303 PayByCreditCard2'
+PayByCreditCard2' PayByCheck2'
+PayByCheck2' PAR_303-1-join
+Confirm-Selection2' PAR_303-1-join
+PAR_303-1-join CheckInventory2'
+CheckInventory2' PackageGoods2'
+PackageGoods2' RegionalShipping2'
+RegionalShipping2' InternationalShipping2'
+InternationalShipping2' NationalShipping2'
+NationalShipping2' ArchiveOrder2'
+ArchiveOrder2' end
+
+[constraints]
+LBC Confirm-Selection1'.e PayByCheck1'.e 5
+UBC Confirm-Selection1'.e PayByCheck1'.e 18
+LBC Confirm-Selection2'.e PayByCreditCard2'.e 1
+UBC Confirm-Selection2'.e PayByCreditCard2'.e 22
+
